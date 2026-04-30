@@ -1131,6 +1131,7 @@ GameObject:
   - component: {fileID: 1547965088580009335}
   - component: {fileID: 2716608046096753646}
   - component: {fileID: 295640217085967409}
+  - component: {fileID: 1123353366868460076}
   m_Layer: 0
   m_Name: goblin_d_shareyko
   m_TagString: Untagged
@@ -1211,7 +1212,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 13
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1235,8 +1236,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89200f1e5bfcd3244a1c1c21c960cd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: {x: 0, y: 0, z: 0}
-  max: {x: 0, y: 0, z: 0}
+  min: {x: -50, y: 0, z: -50}
+  max: {x: 50, y: 0, z: 50}
+--- !u!135 &1123353366868460076
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246579913492566014}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3371580352908061861
 GameObject:
   m_ObjectHideFlags: 0

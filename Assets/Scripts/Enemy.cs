@@ -15,6 +15,15 @@ public class Enemy : MonoBehaviour
         StartCoroutine("Patrol");
     }
 
+    void Update()
+    {
+        if (playerDetected)
+        {
+            GetComponent<NavMeshAgent>().SetDestination(GameObject.FindWithTag("Player").transform.position);
+            GetComponent<Animator>().SetFloat("Velocity", 2);
+        }
+    }
+
     IEnumerator Patrol()
     {
         while (true)
@@ -38,6 +47,7 @@ public class Enemy : MonoBehaviour
         GetComponent<NavMeshAgent>().SetDestination(destination);
         GetComponent<Animator>().SetFloat("Velocity", 2);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -45,7 +55,6 @@ public class Enemy : MonoBehaviour
             playerDetected = true;
             StopCoroutine("Patrol");
             transform.LookAt(other.transform);
-            GetComponent<NavMeshAgent>().SetDestination(other.transform.position);
             print("personaje detectado");
         }
     }
